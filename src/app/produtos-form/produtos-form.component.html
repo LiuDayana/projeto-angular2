@@ -1,0 +1,15 @@
+<div class="container container-form">
+    <h2>{{produto.id? 'editar produto': 'adicionar produto' }}</h2>
+    <form (ngsubmit)="salvarproduto()"#produtoform="ngform">
+        <div class = "form-group">
+            <label for="nome">nome do produto</label>
+            <input type ="text" class="form-control" id ="nome" [(ngmodel)]="produto.nome"
+            name="nome" required>
+</div>
+
+<div class="form-group">
+    <label for="quantidade">quantidade</label>
+    <input type="number" class="form-control" id="preco" [(ngmodel)]="produto.preco" name="preco"required>
+</div>
+
+<button type ="submit" class="btn btn-success mt-3"[disabled]="!produtoForm.form.valid"
